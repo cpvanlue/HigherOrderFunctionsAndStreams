@@ -80,7 +80,7 @@ public class HigherOrderFunctionsLearningTest {
     @Test
     public void testConcatEven() {
         Stream<String> input = Stream.of("a1", "a2", "a3", "b1", "b2", "b3");
-        String actual = null;
+        String actual = input.filter(l -> l.endsWith("0") || l.endsWith("2") || l.endsWith("4") || l.endsWith("6") || l.endsWith("8")).collect(Collectors.joining());
         String expected = "a2b2";
         Assertions.assertEquals(expected, actual);
     }
